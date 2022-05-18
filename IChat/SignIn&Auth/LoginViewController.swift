@@ -42,6 +42,8 @@ class LoginViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        googleButton.customizedGoogleButton()
+        
         setupConstraints()
         
         
@@ -61,9 +63,11 @@ extension LoginViewController {
                                          axis: .vertical,
                                          spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField],
-                                         axis: .vertical,
-                                         spacing: 0)
+                                            axis: .vertical,
+                                            spacing: 0)
+        
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
         let combinedStackView = UIStackView(arrangedSubviews: [
             loginWithView,
             orLabel,
@@ -104,7 +108,7 @@ extension LoginViewController {
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-    
+        
     }
     
 }
