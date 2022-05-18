@@ -15,10 +15,9 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
+                
         setupCollectionView()
+        setupSearchBar()
         
     }
     
@@ -34,6 +33,18 @@ class ListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+    }
+    
+    private func setupSearchBar() {
+        
+        navigationController?.navigationBar.tintColor = .mainWhite()
+        navigationController?.navigationBar.shadowImage = UIImage()
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
     
     
@@ -59,7 +70,15 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
+}
+
+// MARK: UISearchBarDelegate
+
+extension ListViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
     
 }
 
@@ -75,10 +94,10 @@ struct ListVCProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let ListVC = ListViewController()
+        let tabBarVC = MainTabBarController()
         
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> ListViewController {
-            return ListVC
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> MainTabBarController {
+            return tabBarVC
         }
         
         func updateUIViewController(_ uiViewController: ListVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) {
