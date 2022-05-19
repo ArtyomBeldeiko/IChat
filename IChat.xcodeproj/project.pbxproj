@@ -28,6 +28,9 @@
 		39AAA4912835A27B001E6D0C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA4902835A27B001E6D0C /* ListViewController.swift */; };
 		39AAA4942835A71B001E6D0C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA4932835A71B001E6D0C /* MainTabBarController.swift */; };
 		39AAA4962835A780001E6D0C /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA4952835A780001E6D0C /* PeopleViewController.swift */; };
+		39AAA4982836F68F001E6D0C /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA4972836F68F001E6D0C /* waitingChats.json */; };
+		39AAA49A2836F69C001E6D0C /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 39AAA4992836F69C001E6D0C /* activeChats.json */; };
+		39AAA49D2836F718001E6D0C /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA49C2836F718001E6D0C /* BundleDecodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		39AAA4902835A27B001E6D0C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		39AAA4932835A71B001E6D0C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		39AAA4952835A780001E6D0C /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		39AAA4972836F68F001E6D0C /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		39AAA4992836F69C001E6D0C /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		39AAA49C2836F718001E6D0C /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 				39AAA4922835A6C9001E6D0C /* Controllers */,
 				39AAA48F2835A25F001E6D0C /* SignIn&Auth */,
 				390696492834154B00AFE4AA /* Extensions */,
+				39AAA49B2836F6F7001E6D0C /* JSONData */,
 				390696332832EDAA00AFE4AA /* Assets.xcassets */,
 				390696352832EDAA00AFE4AA /* LaunchScreen.storyboard */,
 				390696382832EDAA00AFE4AA /* Info.plist */,
@@ -118,6 +125,7 @@
 				3906964A283418A000AFE4AA /* ButtonFormView.swift */,
 				390696502834402400AFE4AA /* SeparatorTextField.swift */,
 				39AAA48928357C98001E6D0C /* PhotoView.swift */,
+				39AAA49C2836F718001E6D0C /* BundleDecodable.swift */,
 				390696482834154400AFE4AA /* UIKit */,
 			);
 			path = Extensions;
@@ -142,6 +150,15 @@
 				39AAA4952835A780001E6D0C /* PeopleViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		39AAA49B2836F6F7001E6D0C /* JSONData */ = {
+			isa = PBXGroup;
+			children = (
+				39AAA4992836F69C001E6D0C /* activeChats.json */,
+				39AAA4972836F68F001E6D0C /* waitingChats.json */,
+			);
+			path = JSONData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +219,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AAA4982836F68F001E6D0C /* waitingChats.json in Resources */,
 				390696372832EDAA00AFE4AA /* LaunchScreen.storyboard in Resources */,
 				390696342832EDAA00AFE4AA /* Assets.xcassets in Resources */,
+				39AAA49A2836F69C001E6D0C /* activeChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +242,7 @@
 				39AAA48A28357C98001E6D0C /* PhotoView.swift in Sources */,
 				3906963F2832F3CA00AFE4AA /* UIButton + Extension .swift in Sources */,
 				39AAA488283578E7001E6D0C /* SetupProfileViewController.swift in Sources */,
+				39AAA49D2836F718001E6D0C /* BundleDecodable.swift in Sources */,
 				3906962F2832EDA900AFE4AA /* AuthViewController.swift in Sources */,
 				3906964D2834388500AFE4AA /* UIStackView + Extension.swift in Sources */,
 				3906964B283418A000AFE4AA /* ButtonFormView.swift in Sources */,
