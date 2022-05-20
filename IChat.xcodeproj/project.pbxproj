@@ -25,6 +25,7 @@
 		3973657D2837A63D004A0182 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3973657C2837A63D004A0182 /* waitingChats.json */; };
 		3973657F2837A647004A0182 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3973657E2837A647004A0182 /* activeChats.json */; };
 		397365822837A7FE004A0182 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397365812837A7FE004A0182 /* ActiveChatCell.swift */; };
+		397365842837BAB7004A0182 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397365832837BAB7004A0182 /* GradientView.swift */; };
 		39AAA488283578E7001E6D0C /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA487283578E7001E6D0C /* SetupProfileViewController.swift */; };
 		39AAA48A28357C98001E6D0C /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA48928357C98001E6D0C /* PhotoView.swift */; };
 		39AAA48E28358D2F001E6D0C /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */; };
@@ -55,6 +56,7 @@
 		3973657C2837A63D004A0182 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		3973657E2837A647004A0182 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		397365812837A7FE004A0182 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		397365832837BAB7004A0182 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		39AAA487283578E7001E6D0C /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		39AAA48928357C98001E6D0C /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				390696502834402400AFE4AA /* SeparatorTextField.swift */,
 				39AAA48928357C98001E6D0C /* PhotoView.swift */,
 				39AAA49C2836F718001E6D0C /* BundleDecodable.swift */,
+				397365832837BAB7004A0182 /* GradientView.swift */,
 				390696482834154400AFE4AA /* UIKit */,
 			);
 			path = Extensions;
@@ -246,6 +249,7 @@
 			files = (
 				39AAA4912835A27B001E6D0C /* ListViewController.swift in Sources */,
 				3906964F28343B7A00AFE4AA /* SignUpViewController.swift in Sources */,
+				397365842837BAB7004A0182 /* GradientView.swift in Sources */,
 				39AAA4942835A71B001E6D0C /* MainTabBarController.swift in Sources */,
 				390696512834402500AFE4AA /* SeparatorTextField.swift in Sources */,
 				397365822837A7FE004A0182 /* ActiveChatCell.swift in Sources */,
