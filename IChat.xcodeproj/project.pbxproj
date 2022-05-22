@@ -34,6 +34,10 @@
 		3973659328397277004A0182 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659228397277004A0182 /* MUser.swift */; };
 		3973659528399902004A0182 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659428399902004A0182 /* UserCell.swift */; };
 		3973659728399B6E004A0182 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659628399B6E004A0182 /* UIViewController + Extension.swift */; };
+		39736599283A6845004A0182 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39736598283A6845004A0182 /* ProfileViewController.swift */; };
+		3973659B283ADA30004A0182 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659A283ADA30004A0182 /* InsertableTextField.swift */; };
+		3973659D283AE743004A0182 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659C283AE743004A0182 /* UIView + Extension.swift */; };
+		3973659F283AF4CF004A0182 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973659E283AF4CF004A0182 /* ChatRequestViewController.swift */; };
 		39AAA488283578E7001E6D0C /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA487283578E7001E6D0C /* SetupProfileViewController.swift */; };
 		39AAA48A28357C98001E6D0C /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA48928357C98001E6D0C /* PhotoView.swift */; };
 		39AAA48E28358D2F001E6D0C /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */; };
@@ -73,6 +77,10 @@
 		3973659228397277004A0182 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		3973659428399902004A0182 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		3973659628399B6E004A0182 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		39736598283A6845004A0182 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3973659A283ADA30004A0182 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
+		3973659C283AE743004A0182 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		3973659E283AF4CF004A0182 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		39AAA487283578E7001E6D0C /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		39AAA48928357C98001E6D0C /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 				390696402832F71000AFE4AA /* UIFont + Extension.swift */,
 				3906964C2834388500AFE4AA /* UIStackView + Extension.swift */,
 				39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */,
+				3973659C283AE743004A0182 /* UIView + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -149,8 +158,9 @@
 				39AAA48928357C98001E6D0C /* PhotoView.swift */,
 				39AAA49C2836F718001E6D0C /* BundleDecodable.swift */,
 				397365832837BAB7004A0182 /* GradientView.swift */,
-				390696482834154400AFE4AA /* UIKit */,
+				3973659A283ADA30004A0182 /* InsertableTextField.swift */,
 				3973659628399B6E004A0182 /* UIViewController + Extension.swift */,
+				390696482834154400AFE4AA /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,7 +171,6 @@
 				397365812837A7FE004A0182 /* ActiveChatCell.swift */,
 				3973658528381F01004A0182 /* WaitingChatCell.swift */,
 				3973659428399902004A0182 /* UserCell.swift */,
-				3973658C283854F9004A0182 /* Header */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -205,10 +214,13 @@
 		39AAA4922835A6C9001E6D0C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				397365802837A7F0004A0182 /* Cell */,
 				39AAA4932835A71B001E6D0C /* MainTabBarController.swift */,
 				39AAA4902835A27B001E6D0C /* ListViewController.swift */,
 				39AAA4952835A780001E6D0C /* PeopleViewController.swift */,
+				39736598283A6845004A0182 /* ProfileViewController.swift */,
+				3973659E283AF4CF004A0182 /* ChatRequestViewController.swift */,
+				397365802837A7F0004A0182 /* Cell */,
+				3973658C283854F9004A0182 /* Header */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -306,14 +318,18 @@
 				390696412832F71000AFE4AA /* UIFont + Extension.swift in Sources */,
 				39AAA4962835A780001E6D0C /* PeopleViewController.swift in Sources */,
 				39AAA48A28357C98001E6D0C /* PhotoView.swift in Sources */,
+				3973659B283ADA30004A0182 /* InsertableTextField.swift in Sources */,
 				3906963F2832F3CA00AFE4AA /* UIButton + Extension .swift in Sources */,
 				39AAA488283578E7001E6D0C /* SetupProfileViewController.swift in Sources */,
+				39736599283A6845004A0182 /* ProfileViewController.swift in Sources */,
 				39AAA49D2836F718001E6D0C /* BundleDecodable.swift in Sources */,
+				3973659F283AF4CF004A0182 /* ChatRequestViewController.swift in Sources */,
 				3973659328397277004A0182 /* MUser.swift in Sources */,
 				3906962F2832EDA900AFE4AA /* AuthViewController.swift in Sources */,
 				3906964D2834388500AFE4AA /* UIStackView + Extension.swift in Sources */,
 				3906964B283418A000AFE4AA /* ButtonFormView.swift in Sources */,
 				390696452832FB3300AFE4AA /* UILabel + Extension.swift in Sources */,
+				3973659D283AE743004A0182 /* UIView + Extension.swift in Sources */,
 				39AAA48E28358D2F001E6D0C /* SegmentedControl + Extension.swift in Sources */,
 				3973658628381F01004A0182 /* WaitingChatCell.swift in Sources */,
 				3973659528399902004A0182 /* UserCell.swift in Sources */,
