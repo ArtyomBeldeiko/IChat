@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -36,9 +37,6 @@ class SignUpViewController: UIViewController {
     
     weak var delegate: AuthNavigationDelegate?
     
-    let profileSetupVC = SetupProfileViewController()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,12 +56,17 @@ class SignUpViewController: UIViewController {
             password: passwordTextField.text,
             confirmPassword: confirmPasswordTextField.text) { (result) in
                 switch result {
+                    
                 case .success(let user):
-                    self.showAlert(withTitle: "Success", withMessage: "You are registered.")
-                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                    
+                    self.showAlert(with: "Success", and: "You are registered.") { [self] in
+                        self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                    }
                     
                 case .failure(let error):
-                    self.showAlert(withTitle: "Error", withMessage: "An error occured. Please, try later.")
+                    
+                    self.showAlert(with: "Error", and: "An error occured. Please, try later.")
+                    
                 }
         }
     }
@@ -148,13 +151,13 @@ struct SignUpVCProvider: PreviewProvider {
 
 extension UIViewController {
     
-    func showAlert(withTitle title: String, withMessage message: String) {
-        
+    func showAlert(with title: String, and message: String, completion: @escaping () -> Void = { }) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            completion()
+        }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
-        
     }
     
 }

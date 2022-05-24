@@ -23,6 +23,9 @@
 		390696512834402500AFE4AA /* SeparatorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390696502834402400AFE4AA /* SeparatorTextField.swift */; };
 		390696532835081200AFE4AA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390696522835081200AFE4AA /* LoginViewController.swift */; };
 		393AB347283D4D810085246A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 393AB346283D4D810085246A /* GoogleService-Info.plist */; };
+		393FFA41283D7A8600748F9A /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FFA40283D7A8600748F9A /* AuthNavigationDelegate.swift */; };
+		393FFA43283D83C300748F9A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FFA42283D83C300748F9A /* FirestoreService.swift */; };
+		393FFA45283D8F9300748F9A /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393FFA44283D8F9300748F9A /* UserError.swift */; };
 		3973657D2837A63D004A0182 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3973657C2837A63D004A0182 /* waitingChats.json */; };
 		3973657F2837A647004A0182 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 3973657E2837A647004A0182 /* activeChats.json */; };
 		397365822837A7FE004A0182 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397365812837A7FE004A0182 /* ActiveChatCell.swift */; };
@@ -97,6 +100,9 @@
 		390696502834402400AFE4AA /* SeparatorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorTextField.swift; sourceTree = "<group>"; };
 		390696522835081200AFE4AA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		393AB346283D4D810085246A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		393FFA40283D7A8600748F9A /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
+		393FFA42283D83C300748F9A /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		393FFA44283D8F9300748F9A /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		3973657C2837A63D004A0182 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		3973657E2837A647004A0182 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		397365812837A7FE004A0182 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				3906962C2832EDA900AFE4AA /* SceneDelegate.swift */,
 				397365A3283C2E80004A0182 /* Services */,
 				397365A4283C2EBE004A0182 /* AuthService.swift */,
+				393FFA42283D83C300748F9A /* FirestoreService.swift */,
 				39AAA4922835A6C9001E6D0C /* Controllers */,
 				39AAA48F2835A25F001E6D0C /* SignIn&Auth */,
 				39736589283839D8004A0182 /* Protocols */,
@@ -252,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				39736587283839C4004A0182 /* SelfConfiguringCell.swift */,
+				393FFA40283D7A8600748F9A /* AuthNavigationDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 			children = (
 				397365A6283C47FF004A0182 /* Validators.swift */,
 				397365A8283C4A90004A0182 /* AuthError.swift */,
+				393FFA44283D8F9300748F9A /* UserError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,8 +452,10 @@
 				397365A7283C47FF004A0182 /* Validators.swift in Sources */,
 				39AAA4962835A780001E6D0C /* PeopleViewController.swift in Sources */,
 				39AAA48A28357C98001E6D0C /* PhotoView.swift in Sources */,
+				393FFA41283D7A8600748F9A /* AuthNavigationDelegate.swift in Sources */,
 				3973659B283ADA30004A0182 /* InsertableTextField.swift in Sources */,
 				3906963F2832F3CA00AFE4AA /* UIButton + Extension .swift in Sources */,
+				393FFA43283D83C300748F9A /* FirestoreService.swift in Sources */,
 				39AAA488283578E7001E6D0C /* SetupProfileViewController.swift in Sources */,
 				39736599283A6845004A0182 /* ProfileViewController.swift in Sources */,
 				39AAA49D2836F718001E6D0C /* BundleDecodable.swift in Sources */,
@@ -452,6 +463,7 @@
 				3973659328397277004A0182 /* MUser.swift in Sources */,
 				3906962F2832EDA900AFE4AA /* AuthViewController.swift in Sources */,
 				3906964D2834388500AFE4AA /* UIStackView + Extension.swift in Sources */,
+				393FFA45283D8F9300748F9A /* UserError.swift in Sources */,
 				3906964B283418A000AFE4AA /* ButtonFormView.swift in Sources */,
 				390696452832FB3300AFE4AA /* UILabel + Extension.swift in Sources */,
 				3973659D283AE743004A0182 /* UIView + Extension.swift in Sources */,

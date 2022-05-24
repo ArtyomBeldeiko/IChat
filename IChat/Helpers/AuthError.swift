@@ -33,7 +33,4 @@ extension AuthError: LocalizedError {
         }
     }
     
-    
-    
-    
 }

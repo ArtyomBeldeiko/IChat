@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol AuthNavigationDelegate: class {
-    
-    func toLoginVC()
-    func toSignUpVC()
-    
-}
-
 
 class LoginViewController: UIViewController {
     
@@ -65,13 +58,14 @@ class LoginViewController: UIViewController {
                                  password: passwordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(withTitle: "Success!", withMessage: "You are authorized.")
+                self.showAlert(with: "Success!", and: "You are authorized!") {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                }
             case .failure(let error):
-                self.showAlert(withTitle: "Error", withMessage: "Please try again.")
+                self.showAlert(with: "Error!", and: error.localizedDescription)
             }
-        }
-        
     }
+}
     
     @objc private func signUpButtonTapped() {
         
