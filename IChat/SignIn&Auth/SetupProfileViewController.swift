@@ -76,10 +76,6 @@ extension SetupProfileViewController {
             combinedStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
-        
-        
-        
-        
     }
     
 }

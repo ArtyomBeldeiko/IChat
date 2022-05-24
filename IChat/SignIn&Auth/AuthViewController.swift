@@ -25,6 +25,10 @@ class AuthViewController: UIViewController {
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .mainBlack(), font: .avenir20(), isShadow: false, cornerRadius: 4)
     let loginButton = UIButton(title: "Login", titleColor: .buttonRed(), backgroundColor: .white, font: .avenir20(), isShadow: true, cornerRadius: 4)
     
+    let signUpVC = SignUpViewController()
+    let loginVC = LoginViewController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +38,21 @@ class AuthViewController: UIViewController {
         
         setupConstaints()
         
+        emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        signUpVC.delegate = self
+        loginVC.delegate = self
+        
+    }
+    
+    @objc private func emailButtonTapped() {
+        present(signUpVC, animated: true, completion: nil)
+        
+    }
+    
+    @objc private func loginButtonTapped() {
+        present(loginVC, animated: true, completion: nil)
     }
     
     
@@ -69,6 +88,18 @@ extension AuthViewController {
         ])
         
     }
+}
+
+extension AuthViewController: AuthNavigationDelegate {
+    
+    func toLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func toSignUpVC() {
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: SwiftUI

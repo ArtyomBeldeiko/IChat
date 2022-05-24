@@ -34,6 +34,10 @@ class SignUpViewController: UIViewController {
     let passwordTextField = SeparatorTextField(font: .avenir20())
     let confirmPasswordTextField = SeparatorTextField(font: .avenir20())
     
+    weak var delegate: AuthNavigationDelegate?
+    
+    let profileSetupVC = SetupProfileViewController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,35 @@ class SignUpViewController: UIViewController {
         view.backgroundColor = .white
         
         setupConstraints()
+        
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+    }
+    
+    @objc private func signUpButtonTapped() {
+        
+        AuthService.shared.register(email: emailTextField.text,
+                                    password: passwordTextField.text,
+                                    confirmPassword: confirmPasswordLabel.text) { [self] (result) in
+            switch result {
+            case .success(_):
+                
+                self.showAlert(withTitle: "Success!", withMessage: "Your account is registered.")
+                present(profileSetupVC, animated: true, completion: nil)
+                
+            case .failure(_):
+                self.showAlert(withTitle: "Error", withMessage: "Please try again.")
+            }
+        }
+        
+    }
+    
+    @objc private func loginButtonTapped() {
+        
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
         
     }
     
@@ -112,4 +145,17 @@ struct SignUpVCProvider: PreviewProvider {
             
         }
     }
+}
+
+extension UIViewController {
+    
+    func showAlert(withTitle title: String, withMessage message: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
 }
