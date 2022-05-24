@@ -53,20 +53,19 @@ class SignUpViewController: UIViewController {
     
     @objc private func signUpButtonTapped() {
         
-        AuthService.shared.register(email: emailTextField.text,
-                                    password: passwordTextField.text,
-                                    confirmPassword: confirmPasswordLabel.text) { [self] (result) in
-            switch result {
-            case .success(_):
-                
-                self.showAlert(withTitle: "Success!", withMessage: "Your account is registered.")
-                present(profileSetupVC, animated: true, completion: nil)
-                
-            case .failure(_):
-                self.showAlert(withTitle: "Error", withMessage: "Please try again.")
-            }
+        AuthService.shared.register(
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            confirmPassword: confirmPasswordTextField.text) { (result) in
+                switch result {
+                case .success(let user):
+                    self.showAlert(withTitle: "Success", withMessage: "You are registered.")
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                    
+                case .failure(let error):
+                    self.showAlert(withTitle: "Error", withMessage: "An error occured. Please, try later.")
+                }
         }
-        
     }
     
     @objc private func loginButtonTapped() {

@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:656267509840:ios:f39760fc96e3474c921155</string>
+	<key>DATABASE_URL</key>
+	<string>https://ichat-6bca8-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>
