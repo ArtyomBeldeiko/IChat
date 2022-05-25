@@ -29,8 +29,19 @@ class ListViewController: UIViewController {
         }
     }
     
-    
     var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
+    
+    private let currentUser: MUSer
+    
+    init(currentUser: MUSer) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {

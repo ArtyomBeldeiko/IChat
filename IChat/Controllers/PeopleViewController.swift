@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([MUSer].self, from: "users.json")
+    let users = [MUSer]()
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MUSer>!
@@ -29,6 +30,18 @@ class PeopleViewController: UIViewController {
         
     }
     
+    private let currentUser: MUSer
+    
+    init(currentUser: MUSer) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +50,9 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         createDataSource()
         reloadData(withText: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logOutButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 142 / 255, green: 90 / 255, blue: 247 / 255, alpha: 1)
         
     }
     
@@ -76,6 +92,29 @@ class PeopleViewController: UIViewController {
         snapshot.appendSections([.users])
         snapshot.appendItems(filteredUsers, toSection: .users)
         dataSource?.apply(snapshot, animatingDifferences: true)
+        
+    }
+    
+    @objc private func logOutButtonTapped() {
+        
+        let alert = UIAlertController(title: nil, message: "Do you want to sign out?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { (_) in
+            
+            do {
+                
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+                
+            } catch {
+                
+                print("Error during signing out: \(error.localizedDescription)")
+                
+            }
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
         
     }
     

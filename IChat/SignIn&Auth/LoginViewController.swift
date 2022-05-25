@@ -59,8 +59,21 @@ class LoginViewController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Success!", and: "You are authorized!") {
-                    self.present(MainTabBarController(), animated: true, completion: nil)
+                    FirestoreService.shared.getUserData(user: user) { (result) in
+                        
+                        switch result {
+                            
+                        case .success(let muser):
+                            let mainTabBar = MainTabBarController(currentUser: muser)
+                            mainTabBar.modalPresentationStyle = .fullScreen
+                            self.present(mainTabBar, animated: true, completion: nil)
+                            
+                        case .failure(let error):
+                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
                 }
+                
             case .failure(let error):
                 self.showAlert(with: "Error!", and: error.localizedDescription)
             }
@@ -74,9 +87,6 @@ class LoginViewController: UIViewController {
         }
         
     }
-    
-    
-    
     
 }
 

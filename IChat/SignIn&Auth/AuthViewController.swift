@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class AuthViewController: UIViewController {
     
@@ -28,7 +29,6 @@ class AuthViewController: UIViewController {
     
     let signUpVC = SignUpViewController()
     let loginVC = LoginViewController()
-    let setupProfileVC = SetupProfileViewController(currentUser: Auth.auth().currentUser!)
     
     
     override func viewDidLoad() {
