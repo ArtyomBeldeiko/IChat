@@ -56,6 +56,19 @@ class SetupProfileViewController: UIViewController {
         
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTapped), for: .touchUpInside)
         
+        addPhotoView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
+        
+    }
+    
+    @objc private func plusButtonTapped() {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+        
+        
+        
     }
     
     @objc private func goToChatsButtonTapped() {
@@ -63,7 +76,7 @@ class SetupProfileViewController: UIViewController {
         FirestoreService.shared.saveProfileWith(id: currentUser.uid,
                                                 email: currentUser.email!,
                                                 username: fullNameTextField.text,
-                                                avatarImageString: "nil",
+                                                avatarImage: addPhotoView.imageView.image,
                                                 description: aboutMeTextField.text,
                                                 sex: sexSegmentedControl.titleForSegment(at: sexSegmentedControl.selectedSegmentIndex)) { (result) in
             switch result {
@@ -118,6 +131,21 @@ extension SetupProfileViewController {
             combinedStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
+    }
+    
+}
+
+// MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension SetupProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        addPhotoView.imageView.image = image
     }
     
 }

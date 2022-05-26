@@ -8,6 +8,9 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseGoogleAuthUI
+import FirebaseAuthUI
 
 class AuthViewController: UIViewController {
     
@@ -103,6 +106,7 @@ extension AuthViewController: AuthNavigationDelegate {
     }
     
 }
+
 
 // MARK: SwiftUI
 

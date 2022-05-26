@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C089F2775CE0D426DB7732 /* Pods_IChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570E86F72FDA940C1DFF6D8F /* Pods_IChat.framework */; };
 		3906962B2832EDA900AFE4AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906962A2832EDA900AFE4AA /* AppDelegate.swift */; };
 		3906962D2832EDA900AFE4AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906962C2832EDA900AFE4AA /* SceneDelegate.swift */; };
 		3906962F2832EDA900AFE4AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906962E2832EDA900AFE4AA /* AuthViewController.swift */; };
@@ -79,6 +80,9 @@
 		39BBE83A283D50BF00A71C58 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39BBE839283D50BF00A71C58 /* FirebaseRemoteConfigSwift */; };
 		39BBE83C283D50BF00A71C58 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 39BBE83B283D50BF00A71C58 /* FirebaseStorage */; };
 		39BBE83E283D50BF00A71C58 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 39BBE83D283D50BF00A71C58 /* FirebaseStorageCombine-Community */; };
+		39C0C02928401D9500EB42FC /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0C02828401D9500EB42FC /* StorageService.swift */; };
+		39C0C02B284022CF00EB42FC /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0C02A284022CF00EB42FC /* UIImage + Extension.swift */; };
+		39C0C02D284035CB00EB42FC /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0C02C284035CB00EB42FC /* ListenerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +133,12 @@
 		39AAA4932835A71B001E6D0C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		39AAA4952835A780001E6D0C /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		39AAA49C2836F718001E6D0C /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
+		39C0C02828401D9500EB42FC /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		39C0C02A284022CF00EB42FC /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		39C0C02C284035CB00EB42FC /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
+		46697FD7509F6A115D806598 /* Pods-IChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IChat.debug.xcconfig"; path = "Target Support Files/Pods-IChat/Pods-IChat.debug.xcconfig"; sourceTree = "<group>"; };
+		570E86F72FDA940C1DFF6D8F /* Pods_IChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06BEEEF1B2147AEE187DA49 /* Pods-IChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IChat.release.xcconfig"; path = "Target Support Files/Pods-IChat/Pods-IChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +173,7 @@
 				39BBE824283D50BF00A71C58 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				39BBE834283D50BF00A71C58 /* FirebaseMessaging in Frameworks */,
 				39BBE830283D50BF00A71C58 /* FirebaseInstallations in Frameworks */,
+				03C089F2775CE0D426DB7732 /* Pods_IChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +183,8 @@
 		0606B7049D703E0A15485A5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				46697FD7509F6A115D806598 /* Pods-IChat.debug.xcconfig */,
+				A06BEEEF1B2147AEE187DA49 /* Pods-IChat.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,6 +195,7 @@
 				390696292832EDA900AFE4AA /* IChat */,
 				390696282832EDA900AFE4AA /* Products */,
 				0606B7049D703E0A15485A5D /* Pods */,
+				C498D4A82C29421F3D0235B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +215,8 @@
 				397365A3283C2E80004A0182 /* Services */,
 				397365A4283C2EBE004A0182 /* AuthService.swift */,
 				393FFA42283D83C300748F9A /* FirestoreService.swift */,
+				39C0C02828401D9500EB42FC /* StorageService.swift */,
+				39C0C02C284035CB00EB42FC /* ListenerService.swift */,
 				39AAA4922835A6C9001E6D0C /* Controllers */,
 				39AAA48F2835A25F001E6D0C /* SignIn&Auth */,
 				39736589283839D8004A0182 /* Protocols */,
@@ -226,6 +242,7 @@
 				3906964C2834388500AFE4AA /* UIStackView + Extension.swift */,
 				39AAA48D28358D2F001E6D0C /* SegmentedControl + Extension.swift */,
 				3973659C283AE743004A0182 /* UIView + Extension.swift */,
+				39C0C02A284022CF00EB42FC /* UIImage + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -334,6 +351,14 @@
 			path = JSONData;
 			sourceTree = "<group>";
 		};
+		C498D4A82C29421F3D0235B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				570E86F72FDA940C1DFF6D8F /* Pods_IChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,9 +366,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3906963B2832EDAA00AFE4AA /* Build configuration list for PBXNativeTarget "IChat" */;
 			buildPhases = (
+				E388C99263DF6527816D20D0 /* [CP] Check Pods Manifest.lock */,
 				390696232832EDA900AFE4AA /* Sources */,
 				390696242832EDA900AFE4AA /* Frameworks */,
 				390696252832EDA900AFE4AA /* Resources */,
+				C485374F1EBA49923F469C6A /* [CP] Embed Pods Frameworks */,
+				C211D6BC545444DA810757A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,6 +463,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C211D6BC545444DA810757A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C485374F1EBA49923F469C6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IChat/Pods-IChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E388C99263DF6527816D20D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		390696232832EDA900AFE4AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -445,6 +532,8 @@
 				3973658B28384B66004A0182 /* SectionHeader.swift in Sources */,
 				397365842837BAB7004A0182 /* GradientView.swift in Sources */,
 				39AAA4942835A71B001E6D0C /* MainTabBarController.swift in Sources */,
+				39C0C02D284035CB00EB42FC /* ListenerService.swift in Sources */,
+				39C0C02928401D9500EB42FC /* StorageService.swift in Sources */,
 				390696512834402500AFE4AA /* SeparatorTextField.swift in Sources */,
 				397365A9283C4A90004A0182 /* AuthError.swift in Sources */,
 				397365822837A7FE004A0182 /* ActiveChatCell.swift in Sources */,
@@ -464,6 +553,7 @@
 				3906962F2832EDA900AFE4AA /* AuthViewController.swift in Sources */,
 				3906964D2834388500AFE4AA /* UIStackView + Extension.swift in Sources */,
 				393FFA45283D8F9300748F9A /* UserError.swift in Sources */,
+				39C0C02B284022CF00EB42FC /* UIImage + Extension.swift in Sources */,
 				3906964B283418A000AFE4AA /* ButtonFormView.swift in Sources */,
 				390696452832FB3300AFE4AA /* UILabel + Extension.swift in Sources */,
 				3973659D283AE743004A0182 /* UIView + Extension.swift in Sources */,
@@ -614,6 +704,7 @@
 		};
 		3906963C2832EDAA00AFE4AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46697FD7509F6A115D806598 /* Pods-IChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -640,6 +731,7 @@
 		};
 		3906963D2832EDAA00AFE4AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06BEEEF1B2147AEE187DA49 /* Pods-IChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
